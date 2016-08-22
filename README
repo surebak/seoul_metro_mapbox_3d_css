@@ -1,5 +1,3 @@
-This is a infographic shows number of passengers getting on/off on each station at each timeframe (in Seoul Metro Line 2).
-Technically, the map was drawn with Mapbox GL. On top of that, tillted and rotated HTML screen is overlayed. 
-All 3D graphics elements except the map is drawn with CSS. 
+This is a infographic shows number of passengers getting on/off on each station at each timeframe (in Seoul Metro Line 2). Technically, the map was drawn with Mapbox GL. On top of that, tillted and rotated HTML screen is overlayed. All 3D graphics elements except the map is drawn with CSS. 
 
 Data source - http://data.seoul.go.kr
