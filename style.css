@@ -1,0 +1,370 @@
+html {}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+legend,
+button,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    padding: 0;
+    margin: 0;
+}
+
+.box div {
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 177, 68, 0.3);
+    transform: translateZ(18px);
+}
+
+.flat {
+    transform-style: flat;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    perspective: 540px;
+}
+
+body * {
+    transform-style: preserve-3d;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+
+.credit {
+    position: absolute;
+    z-index: 999999;
+    right: 0;
+    bottom: 0;
+    background: white;
+    padding: .2em;
+    font-size: 10px;
+}
+
+.credit p {
+    display: inline-block;
+}
+
+svg.pause {
+    display: none;
+}
+
+.is_play svg.pause {
+    display: block;
+}
+
+.is_play svg.play {
+    display: none;
+}
+
+.btn {
+    width: 4em;
+    height: 4em;
+    vertical-align: -130%;
+    background: white;
+    border-radius: 999em;
+    display: inline-block;
+    box-shadow: 0 0 0px 10px rgb(57, 193, 105);
+    transition: 0.2s;
+}
+
+.btn svg {
+    transition: 0.2s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0px 10px rgb(57, 193, 105), 0 0 0 3em rgba(255, 255, 255, .5);
+}
+
+.btn polygon {
+    stroke: none;
+    fill: black;
+}
+
+.legend {
+    background: white;
+    padding: 1em 2em 1em 2em;
+    font-size: 12px;
+    display: inline-block;
+    color: #888;
+}
+
+.legend p b {
+    background: #35be66;
+    width: 5em;
+    height: .3em;
+    display: inline-block;
+    margin: .2em 1em .2em 0;
+    vertical-align: middle;
+}
+
+.legend p:last-of-type b {
+    background: grey;
+}
+
+.player {
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+    top: 0;
+    padding: 1em 0 1em;
+}
+
+h1 span {
+    font-size: 50%;
+}
+
+.player h2 {
+    font-weight: 300;
+    display: inline-block;
+    background: #39c169;
+    color: white;
+    padding: .2em .5em;
+}
+
+.title {
+    z-index: 99999;
+    position: absolute;
+    font-family: roboto;
+}
+
+.title h1 {
+    font-weight: 100;
+    background: black;
+    color: white;
+    padding: .2em .7em;
+}
+
+.css_body .dot {
+    position: absolute;
+    width: 56%;
+    height: 56%;
+    background: transparent;
+    transform: rotateX(180deg) translate3d(-33%, 24%, 0);
+}
+
+.dot:hover .top p {
+    display: block;
+}
+
+.dot.reverse {
+    transform: rotateX(0) translate3d(-33%, -24%, 0);
+}
+
+.dot.reverse > div {
+    background: rgba(0, 0, 0, .3);
+}
+
+.dot:hover > div {
+    background: rgba(255, 0, 0, .6);
+}
+
+.css_body .dot > div {
+    position: absolute;
+    transition: 0.2s;
+}
+
+.top {
+    bottom: 100%;
+    left: 0;
+    background: rgba(8, 177, 68, 0.3);
+    width: 100%;
+    height: 0.01em;
+    transform: rotateX(90deg);
+    transform-origin: 0 100%;
+}
+
+.is_play .dot p {
+    display: none
+}
+
+.top p,
+.bottom p {
+    position: absolute;
+    bottom: 100%;
+    font-size: 32px;
+    left: 0;
+    font-family: roboto;
+    /*display: none;*/
+    transform: rotateX(90deg) translateY(-115%);
+    background: #39c169;
+    color: white;
+    transform-origin: 0 100%;
+    padding: .2em;
+}
+
+.bottom p {
+    left: 0;
+    transform: rotateX(90deg) translate3d(0, 104%, 0);
+    bottom: 0;
+    background: black;
+}
+
+.dot:hover .bottom p {
+    display: block;
+}
+
+.top:after {
+    content: '';
+    width: 100%;
+    height: 56px;
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1);
+}
+
+.bottom {
+    top: 100%;
+    left: 0;
+    background: rgba(8, 177, 68, 0.3);
+    width: 100%;
+    height: 0.01em;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0%;
+}
+
+.left {
+    top: 0;
+    right: 100%;
+    background: rgba(8, 177, 68, 0.3);
+    height: 100%;
+    width: 0.01em;
+    transform: rotateY(-90deg);
+    transform-origin: 100% 0%;
+}
+
+.right {
+    top: 0;
+    left: 100%;
+    background: rgba(8, 177, 68, 0.3);
+    height: 100%;
+    width: 0.01em;
+    transform: rotateY(90deg);
+    transform-origin: 0 0;
+}
+
+.css_body {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate3d(-3797.5px, -2162.5px, 0) scale(0.97);
+    left: 50%;
+    top: 50%;
+    pointer-events: auto;
+}
+
+.pane svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -3787px;
+    margin-top: -2150px;
+    width: 3881px;
+}
+
+svg path {
+    fill: transparent;
+    stroke-width: 3px;
+    stroke: #08b144;
+    stroke-opacity: .8;
+    stroke-dasharray: 6px 6px;
+    stroke-linecap: round;
+}
+
+.bounding {
+    position: fixed;
+    border: 2px dashed #734545;
+    z-index: 99999;
+    height: 20px;
+}
+
+.pane {
+    /* box-shadow: inset 0 0 0 1px; */
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    bottom: 0;
+    pointer-events: none;
+}
+
+svg polygon {
+    fill: transparent;
+    stroke: red;
+}
+
+@media screen and (max-width: 414px) {
+    .player {
+        bottom: 0;
+        top: auto;
+        left: 0;
+        background: white;
+        padding: .2em .2em 1em .4em;
+        box-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+    .btn {
+        box-shadow: none;
+    }
+    .btn:hover {
+        box-shadow: none;
+    }
+    .player h2 {
+        background: none;
+        color: black;
+    }
+    .credit {
+        color: #aaa;
+        background: white;
+        width: 100%;
+        text-align: center;
+    }
+    .legend{
+        width: 100%;
+    }
+    .title {width: 100%;box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);}
+    .title h1{
+
+    }
+    .title h1 span{
+        display: block;
+        margin-bottom: .2em;
+    }
+    .credit a{
+        color: #39c169;
+    }
+}
