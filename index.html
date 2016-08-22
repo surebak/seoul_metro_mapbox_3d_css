@@ -116,9 +116,7 @@
         dy = (ini_y - map.transform.y / dscale)
         dscale = map.transform.scale / ini_scale
         diff_scale = dscale * 100 - 100
-            // $('.pane').css('transform','rotateX('+tilt+'deg) scale('+dscale+') rotateZ('+rotate*-1+'deg)')
         $('.pane').css('transform', 'rotateX(' + tilt + 'deg) scale(' + dscale + ') rotateZ(' + rotate * -1 + 'deg) translate3d(' + dx + 'px,' + dy + 'px,0px)')
-            // console.log('x:',map.transform.x,'y:',map.transform.y)
         $('.box p').css('transform', 'rotateZ(' + (map.transform.bearing - 18) + 'deg)')
         window.requestAnimationFrame(rerender);
     }
