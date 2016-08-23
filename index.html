@@ -118,10 +118,20 @@
         diff_scale = dscale * 100 - 100
         $('.pane').css('transform', 'rotateX(' + tilt + 'deg) scale(' + dscale + ') rotateZ(' + rotate * -1 + 'deg) translate3d(' + dx + 'px,' + dy + 'px,0px)')
         $('.box p').css('transform', 'rotateZ(' + (map.transform.bearing - 18) + 'deg)')
-        window.requestAnimationFrame(rerender);
-    }
 
-    window.requestAnimationFrame(rerender);
+    }
+    map.on('zoom', function(e) {
+        rerender()
+    });
+
+    map.on('move', function(e) {
+        rerender()
+    });
+
+    map.on('rotate', function(e) {
+        rerender()
+    });
+
 
     $(window).resize(function() {
         $('body').css('perspective', $(window).height() * 1.5 + 'px')
@@ -322,6 +332,7 @@
         map.transform.bearing = 14.447936664895906
         map._update.apply(map)
         view(the_time)
+        rerender()
     })
 
 
