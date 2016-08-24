@@ -335,6 +335,9 @@
         rerender()
     })
 
+    map.on('load',function(e){
+        rerender()
+    })
 
     function run_time() {
         play_me = setInterval(function() {
